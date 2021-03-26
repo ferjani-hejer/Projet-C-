@@ -3,6 +3,7 @@
 #include<QSqlQuery>
 #include<QDebug>
 
+// test
 Employe::Employe()
 {
         id=0;
