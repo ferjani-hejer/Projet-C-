@@ -5,7 +5,7 @@
 #include <QSqlQueryModel>
 #include<QDate>
 #include<QDateTime>
-
+//tesssssssstt
 
 
 class Reportage
