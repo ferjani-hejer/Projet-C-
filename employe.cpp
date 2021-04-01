@@ -1,9 +1,8 @@
 #include "employe.h"
-
 #include<QSqlQuery>
 #include<QDebug>
 
-// test
+
 Employe::Employe()
 {
         id=0;
@@ -13,11 +12,10 @@ Employe::Employe()
         role="";
         salaire=0;
         num_tel=0;
-
 }
 
 Employe::Employe(int id ,QString nom,QString prenom,QString email,int num_tel,int salaire,QString role)
- {
+{
      this->id=id;
      this->nom=nom;
      this->prenom=prenom;
@@ -26,8 +24,7 @@ Employe::Employe(int id ,QString nom,QString prenom,QString email,int num_tel,in
      this->salaire=salaire;
      this->role=role;
 
-
- }
+}
 
 
 int Employe::getId()

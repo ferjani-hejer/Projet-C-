@@ -230,9 +230,9 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButtonAjouter">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>60</x>
        <y>410</y>
-       <width>141</width>
+       <width>191</width>
        <height>61</height>
       </rect>
      </property>
@@ -382,7 +382,7 @@ text-align:center;</string>
       <x>340</x>
       <y>320</y>
       <width>351</width>
-      <height>161</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="font">
@@ -399,55 +399,13 @@ text-align:center;</string>
     <property name="title">
      <string>Modifier Ou Supprimer un employé</string>
     </property>
-    <widget class="QLineEdit" name="LeIdMS">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>40</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>40</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">  border: none;
-  color: black;
-  
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  
-</string>
-     </property>
-     <property name="text">
-      <string>CIN</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButtonModifier">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>141</width>
-       <height>41</height>
+       <x>10</x>
+       <y>70</y>
+       <width>171</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -471,9 +429,9 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>110</y>
-       <width>141</width>
-       <height>41</height>
+       <y>70</y>
+       <width>161</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -500,7 +458,7 @@ font-family:calibri;
       <x>690</x>
       <y>320</y>
       <width>431</width>
-      <height>161</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="font">
@@ -605,9 +563,9 @@ text-align:center;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>110</y>
+       <y>100</y>
        <width>151</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -631,9 +589,9 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>110</y>
-       <width>141</width>
-       <height>41</height>
+       <y>100</y>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">

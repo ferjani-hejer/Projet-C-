@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->tableView->setModel(emp.afficherEmployes());
 }
 
 MainWindow::~MainWindow()
@@ -115,7 +116,6 @@ void MainWindow::on_pushButtonModifier_clicked()
 {
     //Récuprération des informations saisies dans les 3 champs
 
-    int id=ui->LeIdMS->text().toInt(); //convertir une chaine de caractére en un entier
     QString nom=ui->LeTitre->text();
     QString prenom=ui->LeDescription->text();
     QString email=ui->Lemail->text();
@@ -124,13 +124,13 @@ void MainWindow::on_pushButtonModifier_clicked()
     QString role=ui->comboBox->currentText();
 
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-    Employe Em(id,nom,prenom,email,num_tel,salaire,role);
+    Employe Em(id_emp,nom,prenom,email,num_tel,salaire,role);
 
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =Em.modifierEmployes();
 
     bool test2;
-    test2=(controleEmail(email)&&controleVide(nom)&&controleVide(prenom)&&controleVide(email)&&controleVideInt(num_tel)&&controleVideInt(salaire)&&controleVideInt(id) );
+    test2=(controleEmail(email)&&controleVide(nom)&&controleVide(prenom)&&controleVide(email)&&controleVideInt(num_tel)&&controleVideInt(salaire)&&controleVideInt(id_emp) );
 
    if(test2){
     if(test)//si requête executée ==>QMessageBox::information
@@ -160,8 +160,7 @@ void MainWindow::on_pushButtonModifier_clicked()
 
 void MainWindow::on_pushButtonSupprimer_clicked()
 {
-    int idA =ui->LeIdMS->text().toInt();
-            bool test = emp.supprimerEmployes(idA);
+            bool test = emp.supprimerEmployes(id_emp);
             if(test)
             {
                 //refresh affichage
@@ -176,6 +175,7 @@ void MainWindow::on_pushButtonSupprimer_clicked()
 
      QObject::tr("suppression non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
 }
+
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -195,4 +195,29 @@ void MainWindow::on_LeIdRT_textChanged(const QString &arg1)
 void MainWindow::on_LeTitreRT_textChanged(const QString &arg1)
 {
     ui->tableView->setModel(emp.rechercherNom(arg1));
+}
+
+void MainWindow::on_tableView_activated(const QModelIndex &index)
+{
+    QString val=ui->tableView->model()->data(index).toString();
+          QSqlQuery qry;
+          qry.prepare("select * from Employes where"
+                      " cinemp='"+val+"' or nom='"+val+"' or prenom='"+val+"' or email='"+val+"' or num_tel ='"+val+"' or salaire='"+val+"' or role ='"+val+"' ");
+          if(qry.exec())
+            {while (qry.next())
+           { ui->LeId->setText(qry.value(0).toString());
+             ui->LeTitre->setText(qry.value(1).toString());
+             ui->LeDescription->setText(qry.value(2).toString());
+             ui->Lemail->setText(qry.value(3).toString());
+             ui->lineEdit->setText(qry.value(4).toString());
+             ui->lineEdit_2->setText(qry.value(5).toString());
+             ui->comboBox->setCurrentText(qry.value(6).toString());
+
+            }
+        }
+}
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    id_emp=ui->tableView->model()->data(index).toInt();
 }
