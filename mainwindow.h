@@ -35,9 +35,14 @@ private slots:
 
     void on_LeTitreRT_textChanged(const QString &arg1);
 
+    void on_tableView_activated(const QModelIndex &index);
+
+    void on_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     Historique h;
+    int id_h=0;
 };
 
 #endif // MAINWINDOW_H

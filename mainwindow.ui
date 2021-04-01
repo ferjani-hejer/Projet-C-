@@ -390,55 +390,13 @@ text-align:center;</string>
     <property name="title">
      <string>Modifier Ou Supprimer un historique</string>
     </property>
-    <widget class="QLineEdit" name="LeIdMS">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>40</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>40</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">  border: none;
-  color: black;
-  
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  
-</string>
-     </property>
-     <property name="text">
-      <string>ID_H</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButtonModifier">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>141</width>
-       <height>41</height>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -462,9 +420,9 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>110</y>
-       <width>141</width>
-       <height>41</height>
+       <y>60</y>
+       <width>151</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">

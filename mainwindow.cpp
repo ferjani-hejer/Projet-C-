@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->tableView->setModel(h.afficherHistorique());
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +53,7 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
     Historique H(id,Presence,tache,cause,conge_debut,conge_fin,nbr_heures_trv);
+
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =H.ajouterHistorique();
 
@@ -87,7 +89,7 @@ void MainWindow::on_pushButtonModifier_clicked()
 {
     //Récuprération des informations saisies dans les 3 champs
 
-    int id=ui->LeIdMS->text().toInt();
+
     int nbr_heures_trv=ui->lineEdit_3->text().toInt();
 
     QString Presence=ui->comboBox->currentText();
@@ -99,13 +101,13 @@ void MainWindow::on_pushButtonModifier_clicked()
 
 
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-    Historique H(id,Presence,tache,cause,conge_debut,conge_fin,nbr_heures_trv);
+    Historique H(id_h,Presence,tache,cause,conge_debut,conge_fin,nbr_heures_trv);
 
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =H.modifierHistorique();
 
     bool test2;
-    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id)&&controleVideInt(nbr_heures_trv) );
+    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id_h)&&controleVideInt(nbr_heures_trv) );
 
   if(test2){
 
@@ -134,8 +136,8 @@ void MainWindow::on_pushButtonModifier_clicked()
 
 void MainWindow::on_pushButtonSupprimer_clicked()
 {
-    int idA =ui->LeIdMS->text().toInt();
-            bool test =h.supprimerHistorique(idA);
+
+            bool test =h.supprimerHistorique(id_h);
             if(test)
             {
                 //refresh affichage
@@ -169,4 +171,33 @@ void MainWindow::on_LeIdRT_textChanged(const QString &arg1)
 void MainWindow::on_LeTitreRT_textChanged(const QString &arg1)
 {
     ui->tableView->setModel(h.rechercherPresences(arg1));
+}
+
+
+void MainWindow::on_tableView_activated(const QModelIndex &index)
+{
+    QString val=ui->tableView->model()->data(index).toString();
+                  QSqlQuery qry;
+                  qry.prepare("select * from Historiques where"
+                              " idh='"+val+"' or presences='"+val+"' or tache_realise='"+val+"' or debut_conge='"+val+"' or fin_conge ='"+val+"' or nbr_heures_trv ='"+val+"' or cause ='"+val+"'" );
+                  if(qry.exec())
+                    {while (qry.next())
+                   {
+                     ui->LeId->setText(qry.value(0).toString());
+                     ui->comboBox->setCurrentText(qry.value(1).toString());
+                     ui->lineEdit_2->setText(qry.value(2).toString());
+                     ui->dateEdit->setDateTime(qry.value(3).toDateTime());
+                     ui->dateEdit_2->setDateTime(qry.value(4).toDateTime());
+                     ui->lineEdit_3->setText(qry.value(5).toString());
+                     ui->lineEdit_6->setText(qry.value(6).toString());
+
+                   }
+
+                  }
+
+}
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+ id_h=ui->tableView->model()->data(index).toInt();
 }
