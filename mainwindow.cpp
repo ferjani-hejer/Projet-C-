@@ -5,7 +5,10 @@
 #include <QMessageBox>
 #include "connection.h"
 #include<QDebug>
+#include<QLineEdit>
 
+#include <QPrinter>
+#include <QPrintDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tableView->setModel(emp.afficherEmployes());
+    update_id();
 }
 
 MainWindow::~MainWindow()
@@ -32,6 +36,18 @@ bool MainWindow::controleNumTel(int test)
     }
     return false;
 }
+
+void MainWindow::update_id()
+{
+
+       QSqlQueryModel *m=new QSqlQueryModel();
+       QSqlQuery *querry=new QSqlQuery();
+       querry->prepare("SELECT cinemp FROM employes");
+       querry->exec();
+       m->setQuery(*querry);
+
+}
+
 
 bool MainWindow::controleVide(QString test)
 {
@@ -106,7 +122,6 @@ void MainWindow::on_pushButtonAjouter_clicked()
       QMessageBox::information(nullptr, QObject::tr("Ajouter un employé "),
                                  QObject::tr("Employé non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
 
-
   }
 
 
@@ -165,7 +180,7 @@ void MainWindow::on_pushButtonSupprimer_clicked()
             {
                 //refresh affichage
                 ui->tableView->setModel(emp.afficherEmployes());
-
+                update_id();
                 QMessageBox::information(nullptr,QObject::tr("ok"),
                                          QObject::tr("suppression effectué \n ""Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -209,7 +224,7 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
              ui->LeTitre->setText(qry.value(1).toString());
              ui->LeDescription->setText(qry.value(2).toString());
              ui->Lemail->setText(qry.value(3).toString());
-             ui->lineEdit->setText(qry.value(4).toString());
+             ui->lineEdit_3->setText(qry.value(4).toString());
              ui->lineEdit_2->setText(qry.value(5).toString());
              ui->comboBox->setCurrentText(qry.value(6).toString());
 
@@ -217,7 +232,33 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
         }
 }
 
+
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     id_emp=ui->tableView->model()->data(index).toInt();
+}
+
+void MainWindow::on_Impdos_2_clicked()
+{
+    Employe c;
+
+             QString text=c.apercu_pdf();
+             ui->imp->setText(text);
+
+             QPrinter printer ;
+             printer.setPrinterName("imprim");
+             QPrintDialog dialog (&printer,this);
+             if(dialog.exec()==QDialog::Rejected) return ;
+             ui->imp->print(&printer);
+
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+ ui->tableView->setModel(emp.rechercherS(arg1));
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+ ui->tableView->setModel(emp.AfficherTrieS());
 }

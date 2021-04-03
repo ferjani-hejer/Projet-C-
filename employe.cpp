@@ -125,13 +125,6 @@ QSqlQueryModel * Employe::afficherEmployes()
 
 QSqlQueryModel * model=new QSqlQueryModel();
 model->setQuery("select * from Employes");
-model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
-model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
-model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
-model->setHeaderData(3,Qt::Horizontal,QObject::tr("email"));
-model->setHeaderData(4,Qt::Horizontal,QObject::tr("num_tel"));
-model->setHeaderData(5,Qt::Horizontal,QObject::tr("salaire"));
-model->setHeaderData(6,Qt::Horizontal,QObject::tr("role"));
 return model;
 
 }
@@ -169,14 +162,13 @@ QSqlQueryModel * Employe::AfficherTrieCIN()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM employes ORDER BY cinemp");
+    return model;
+}
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("email"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("num_tel"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salaire"));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr("role"));
+QSqlQueryModel * Employe::AfficherTrieS()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM employes ORDER BY salaire");
     return model;
 }
 
@@ -185,13 +177,6 @@ QSqlQueryModel * Employe::AfficherTrieNom()
     QSqlQueryModel * model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM employes ORDER BY nom");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("email"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("num_tel"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salaire"));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr("role"));
     return model;
 }
 
@@ -207,6 +192,19 @@ QSqlQueryModel * Employe::rechercherCIN(QString cin)
     return (model);
 }
 
+
+QSqlQueryModel * Employe::rechercherS(QString cin)
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery q;
+    q.prepare("select * from employes where salaire like ?");
+    q.addBindValue("%"+ cin +"%");
+    q.exec();
+    model->setQuery(q);
+    return (model);
+}
+
+
 QSqlQueryModel * Employe::rechercherNom(QString nom)
 {
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -218,3 +216,30 @@ QSqlQueryModel * Employe::rechercherNom(QString nom)
     return (model);
 
 }
+
+
+QString Employe:: apercu_pdf()
+ {
+     QString text="          ****** Les employes  ******      \n \n " ;
+     QSqlQuery query ;
+     QString i,x,z,a,b,c,d;
+
+
+      query.exec("select * from employes ");
+      while (query.next())
+      {
+         i=query.value(0).toString();
+         x=query.value(1).toString();
+         z=query.value(2).toString();
+         a=query.value(3).toString();
+         b=query.value(4).toString();
+         c=query.value(5).toString();
+         d=query.value(6).toString();
+
+        text += "\n Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - email:"+a+"\n - num_tel :"+b+"\n - salaire : "+c+"\n - role:"+d+"_______\n";
+
+
+     }
+
+             return text ;
+ }

@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void update_id();
 private slots:
 
     bool controleNumTel(int test);
@@ -43,6 +43,12 @@ private slots:
     void on_tableView_activated(const QModelIndex &index);
 
     void on_tableView_clicked(const QModelIndex &index);
+
+    void on_Impdos_2_clicked();
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
