@@ -227,10 +227,10 @@ QString Employe:: apercu_pdf()
  {
     QString text="          ****** Les employes  ******      \n \n " ;
      QSqlQuery query ;
-     QString i,x,z,a,b,c,d;
+     QString i,x,z,a,b,c,d,h,h1,h2,h3,h4;
 
 
-      query.exec("select * from employes ");
+      query.exec("select * from employes left join historiques on historiques.cinemp=employes.cinemp ");
       while (query.next())
       {
          i=query.value(0).toString();
@@ -240,8 +240,13 @@ QString Employe:: apercu_pdf()
          b=query.value(4).toString();
          c=query.value(5).toString();
          d=query.value(6).toString();
+         h=query.value(7).toString();
+         h1=query.value(8).toString();
+         h2=query.value(9).toString();
+         h3=query.value(10).toString();
+         h4=query.value(11).toString();
 
-        text += "\n Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - email:"+a+"\n - num_tel :"+b+"\n - salaire : "+c+"\n - role:"+d+"_______\n";
+        text += "\n Employe Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - email:"+a+"\n - num_tel :"+b+"\n - salaire : "+c+"\n - role:"+d+"_______\n\n Historique Id:"+h+"\n" "\n -Presences:"+h1+"\n" " -Tache:"+h2+"\n" " -Debut conge:"+h3+"\n" " -Fin conge:"+h4+"\n" ;
 
 
      }
