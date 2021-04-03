@@ -134,6 +134,13 @@ bool Employe::supprimerEmployes(int idA)
 {
            QSqlQuery query;
            QString res=QString::number(idA);
+
+           query.prepare("alter table Historiques DROP CONSTRAINT FK");
+           query.exec();
+
+           query.prepare("Delete from Historiques where cinemp=:idA");
+           query.exec();
+
            query.prepare("Delete from Employes where cinemp=:idA");
            query.bindValue(":idA",res);
            return query.exec();
