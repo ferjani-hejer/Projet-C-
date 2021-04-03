@@ -16,6 +16,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void update_id();
+
 private slots:
     bool controleVide(QString test);
 
@@ -38,6 +40,8 @@ private slots:
     void on_tableView_activated(const QModelIndex &index);
 
     void on_tableView_clicked(const QModelIndex &index);
+
+    void on_lineEdit_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

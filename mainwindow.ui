@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1149</width>
-    <height>555</height>
+    <width>1221</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>0</y>
       <width>311</width>
-      <height>481</height>
+      <height>521</height>
      </rect>
     </property>
     <property name="font">
@@ -88,7 +88,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>90</y>
+       <y>150</y>
        <width>141</width>
        <height>41</height>
       </rect>
@@ -105,30 +105,6 @@
      </property>
      <property name="text">
       <string>Pésence</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>200</y>
-       <width>111</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">  border: none;
-  color: black;
-  
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  
-</string>
-     </property>
-     <property name="text">
-      <string>Nbr heures</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -176,9 +152,9 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButtonAjouter">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>410</y>
-       <width>141</width>
+       <x>60</x>
+       <y>430</y>
+       <width>171</width>
        <height>61</height>
       </rect>
      </property>
@@ -203,7 +179,7 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>140</y>
+       <y>200</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -226,7 +202,7 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>150</y>
+       <y>210</y>
        <width>121</width>
        <height>31</height>
       </rect>
@@ -264,29 +240,11 @@ text-align:center;</string>
       <string>Cause</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>210</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="lineEdit_6">
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>360</y>
+       <y>370</y>
        <width>121</width>
        <height>31</height>
       </rect>
@@ -317,7 +275,7 @@ text-align:center;</string>
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>310</y>
+       <y>320</y>
        <width>121</width>
        <height>31</height>
       </rect>
@@ -330,7 +288,7 @@ text-align:center;</string>
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>90</y>
+       <y>150</y>
        <width>121</width>
        <height>41</height>
       </rect>
@@ -340,14 +298,50 @@ text-align:center;</string>
      </property>
      <item>
       <property name="text">
-       <string>OUI</string>
+       <string>Oui</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>NON</string>
+       <string>Non</string>
       </property>
      </item>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  border: none;
+  color: black;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  </string>
+     </property>
+     <property name="text">
+      <string>ID_Emp</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="IDE">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>90</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;</string>
+     </property>
     </widget>
    </widget>
    <widget class="QTableView" name="tableView">
@@ -355,7 +349,7 @@ text-align:center;</string>
      <rect>
       <x>340</x>
       <y>20</y>
-      <width>731</width>
+      <width>821</width>
       <height>291</height>
      </rect>
     </property>
@@ -373,7 +367,7 @@ text-align:center;</string>
       <x>340</x>
       <y>320</y>
       <width>351</width>
-      <height>161</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="font">
@@ -394,7 +388,7 @@ text-align:center;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>60</y>
+       <y>90</y>
        <width>151</width>
        <height>71</height>
       </rect>
@@ -420,7 +414,7 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>60</y>
+       <y>90</y>
        <width>151</width>
        <height>71</height>
       </rect>
@@ -448,8 +442,8 @@ font-family:calibri;
      <rect>
       <x>690</x>
       <y>320</y>
-      <width>411</width>
-      <height>161</height>
+      <width>471</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="font">
@@ -553,8 +547,8 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>110</y>
+       <x>10</x>
+       <y>150</y>
        <width>141</width>
        <height>41</height>
       </rect>
@@ -579,8 +573,8 @@ font-family:calibri;
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>110</y>
+       <x>170</x>
+       <y>150</y>
        <width>141</width>
        <height>41</height>
       </rect>
@@ -599,7 +593,75 @@ font-family:calibri;
   border-radius : 16px;</string>
      </property>
      <property name="text">
-      <string>Trier par nbr_heures</string>
+      <string>Trier par présence</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>231</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  border: none;
+  color: black;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  
+</string>
+     </property>
+     <property name="text">
+      <string>Rechercher par ID_Emp</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>110</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>150</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #8B0000	;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+font-family:calibri;
+  display: inline-block;
+  font-size: 11px;
+  margin: 4px 2px;
+  border-radius : 16px;</string>
+     </property>
+     <property name="text">
+      <string>Trier par id_emp</string>
      </property>
     </widget>
    </widget>
@@ -609,7 +671,7 @@ font-family:calibri;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1149</width>
+     <width>1221</width>
      <height>26</height>
     </rect>
    </property>

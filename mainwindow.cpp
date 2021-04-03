@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tableView->setModel(h.afficherHistorique());
+    update_id();
 }
 
 MainWindow::~MainWindow()
@@ -36,12 +37,25 @@ bool MainWindow::controleVideInt(int test)
 
 }
 
+void MainWindow::update_id()
+{
+
+       QSqlQueryModel *m=new QSqlQueryModel();
+       QSqlQuery *querry=new QSqlQuery();
+       querry->prepare("SELECT cinemp FROM employes");
+       querry->exec();
+       m->setQuery(*querry);
+       ui->IDE->setModel(m);
+
+}
+
+
 void MainWindow::on_pushButtonAjouter_clicked()
 {
     //Récuprération des informations saisies dans les 3 champs
 
     int id=ui->LeId->text().toInt();
-    int nbr_heures_trv=ui->lineEdit_3->text().toInt();
+    int ide=ui->IDE->currentText().toInt();
 
     QString Presence=ui->comboBox->currentText();
     QString tache=ui->lineEdit_2->text();
@@ -52,13 +66,13 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
 
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-    Historique H(id,Presence,tache,cause,conge_debut,conge_fin,nbr_heures_trv);
+    Historique H(id,Presence,tache,cause,conge_debut,conge_fin,ide);
 
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =H.ajouterHistorique();
 
     bool test2;
-    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id)&&controleVideInt(nbr_heures_trv) );
+    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id)&&controleVideInt(ide));
 
   if(test2){
     if(test)//si requête executée ==>QMessageBox::information
@@ -66,6 +80,7 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
        //refresh affichage
         ui->tableView->setModel(h.afficherHistorique());
+        update_id();
         QMessageBox::information(nullptr,QObject::tr("ok"),
                 QObject::tr("Ajout effectué \n Click Cancel to exit."), QMessageBox::Cancel);
     }
@@ -89,9 +104,7 @@ void MainWindow::on_pushButtonModifier_clicked()
 {
     //Récuprération des informations saisies dans les 3 champs
 
-
-    int nbr_heures_trv=ui->lineEdit_3->text().toInt();
-
+    int ide=ui->IDE->currentText().toInt();
     QString Presence=ui->comboBox->currentText();
     QString tache=ui->lineEdit_2->text();
     QString cause=ui->lineEdit_6->text();
@@ -101,13 +114,13 @@ void MainWindow::on_pushButtonModifier_clicked()
 
 
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-    Historique H(id_h,Presence,tache,cause,conge_debut,conge_fin,nbr_heures_trv);
+    Historique H(id_h,Presence,tache,cause,conge_debut,conge_fin,ide);
 
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =H.modifierHistorique();
 
     bool test2;
-    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id_h)&&controleVideInt(nbr_heures_trv) );
+    test2=(controleVide(tache)&&controleVide(cause)&&controleVideInt(id_h));
 
   if(test2){
 
@@ -134,6 +147,7 @@ void MainWindow::on_pushButtonModifier_clicked()
   }
 }
 
+
 void MainWindow::on_pushButtonSupprimer_clicked()
 {
 
@@ -142,7 +156,7 @@ void MainWindow::on_pushButtonSupprimer_clicked()
             {
                 //refresh affichage
                 ui->tableView->setModel(h.afficherHistorique());
-
+                update_id();
                 QMessageBox::information(nullptr,QObject::tr("ok"),
                                          QObject::tr("suppression effectué \n ""Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -160,7 +174,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-     ui->tableView->setModel(h.AfficherTrieHeure());
+     ui->tableView->setModel(h.AfficherTriePresence());
 }
 
 void MainWindow::on_LeIdRT_textChanged(const QString &arg1)
@@ -188,7 +202,6 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
                      ui->lineEdit_2->setText(qry.value(2).toString());
                      ui->dateEdit->setDateTime(qry.value(3).toDateTime());
                      ui->dateEdit_2->setDateTime(qry.value(4).toDateTime());
-                     ui->lineEdit_3->setText(qry.value(5).toString());
                      ui->lineEdit_6->setText(qry.value(6).toString());
 
                    }
@@ -199,5 +212,12 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
 
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
+
  id_h=ui->tableView->model()->data(index).toInt();
+
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->tableView->setModel(h.rechercherID_E(arg1));
 }

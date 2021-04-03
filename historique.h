@@ -13,21 +13,21 @@ public:
 
     //getters
     int getId_H();
+    int getId_E();
     QString getPresence();
     QString getTache();
     QString getCause();
     QDateTime getConge_debut();
     QDateTime getConge_fin();
-    int getNbr_heure_travail();
 
     //Setters
     void setId_H(int);
+    void setId_E(int);
     void setPresence(QString);
     void setTache(QString);
     void setCause(QString);
     void setConge_debut(QDateTime);
     void setConge_fin(QDateTime);
-    void setNbr_Heure_travail(int);
 
 
     bool ajouterHistorique();
@@ -37,13 +37,15 @@ public:
 
 
     QSqlQueryModel * AfficherTrieID_H();
-    QSqlQueryModel * AfficherTrieHeure();
+    QSqlQueryModel * AfficherTrieID_E();
+    QSqlQueryModel * AfficherTriePresence();
 
     QSqlQueryModel * rechercherID_H(QString);
+    QSqlQueryModel * rechercherID_E(QString);
     QSqlQueryModel * rechercherPresences(QString);
 
 private:
-    int IDH,Nbr_heure_travail;
+    int IDH,IDE;
     QString Presence,tache,cause ;
     QDateTime conge_debut,conge_fin;
 
