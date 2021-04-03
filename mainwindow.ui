@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestion des Clients</string>
+   <string>Gestion des Historiques</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGroupBox" name="groupBox">
@@ -513,7 +513,7 @@ font-family:calibri;
       <rect>
        <x>270</x>
        <y>30</y>
-       <width>121</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
@@ -531,7 +531,7 @@ text-align:center;</string>
       <rect>
        <x>270</x>
        <y>70</y>
-       <width>121</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
@@ -625,7 +625,7 @@ font-family:calibri;
       <rect>
        <x>270</x>
        <y>110</y>
-       <width>121</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
