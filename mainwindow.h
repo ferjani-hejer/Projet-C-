@@ -46,7 +46,7 @@ private slots:
 
     void on_Impdos_2_clicked();
 
-    void on_lineEdit_textChanged(const QString &arg1);
+    void on_lineEdit_3_textChanged(const QString &arg1);
 
     void on_pushButton_3_clicked();
 

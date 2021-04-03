@@ -6,21 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1221</width>
-    <height>607</height>
+    <width>1312</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestion des Historiques</string>
+   <string>Gestion des Employés</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>10</y>
       <width>311</width>
-      <height>521</height>
+      <height>531</height>
      </rect>
     </property>
     <property name="font">
@@ -60,6 +60,30 @@
       <string>CIN</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  border: none;
+  color: black;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  
+</string>
+     </property>
+     <property name="text">
+      <string>Nom</string>
+     </property>
+    </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
@@ -77,42 +101,18 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  
-</string>
+  </string>
      </property>
      <property name="text">
       <string>N° Téléphone</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>150</y>
-       <width>141</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">  border: none;
-  color: black;
-  
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  </string>
-     </property>
-     <property name="text">
-      <string>Prénom</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>310</y>
-       <width>121</width>
+       <y>190</y>
+       <width>91</width>
        <height>41</height>
       </rect>
      </property>
@@ -128,15 +128,93 @@
 </string>
      </property>
      <property name="text">
-      <string>Salaire</string>
+      <string>Email</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  border: none;
+  color: black;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  
+</string>
+     </property>
+     <property name="text">
+      <string>Prénom</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="LeId">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>170</x>
        <y>40</y>
-       <width>121</width>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LeTitre">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>90</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LeDescription">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>150</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Lemail">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>200</y>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
@@ -154,7 +232,7 @@ text-align:center;</string>
       <rect>
        <x>60</x>
        <y>430</y>
-       <width>171</width>
+       <width>191</width>
        <height>61</height>
       </rect>
      </property>
@@ -175,12 +253,30 @@ font-family:calibri;
       <string>Ajouter </string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>260</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+     </property>
+    </widget>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>200</y>
-       <width>131</width>
+       <y>310</y>
+       <width>121</width>
        <height>41</height>
       </rect>
      </property>
@@ -195,25 +291,7 @@ font-family:calibri;
   </string>
      </property>
      <property name="text">
-      <string>Email</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="Lemail">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>210</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
+      <string>Salaire</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_10">
@@ -233,19 +311,18 @@ text-align:center;</string>
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  
-</string>
+  </string>
      </property>
      <property name="text">
       <string>Role</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="LeTitre">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>90</y>
-       <width>121</width>
+       <x>170</x>
+       <y>310</y>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
@@ -258,36 +335,13 @@ font: bold, &quot;Comic Sans MS&quot;;;
 text-align:center;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>90</y>
-       <width>111</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">  border: none;
-  color: black;
-  
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  </string>
-     </property>
-     <property name="text">
-      <string>Nom</string>
-     </property>
-    </widget>
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>370</y>
-       <width>121</width>
-       <height>41</height>
+       <x>172</x>
+       <y>360</y>
+       <width>131</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -304,68 +358,14 @@ text-align:center;</string>
       </property>
      </item>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>260</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>310</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LeDescription">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>150</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid black;
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 10px;
-padding: 0 8px;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>370</x>
       <y>10</y>
-      <width>821</width>
-      <height>181</height>
+      <width>871</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -382,7 +382,7 @@ text-align:center;</string>
       <x>340</x>
       <y>320</y>
       <width>351</width>
-      <height>201</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="font">
@@ -403,8 +403,8 @@ text-align:center;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
-       <width>151</width>
+       <y>50</y>
+       <width>161</width>
        <height>71</height>
       </rect>
      </property>
@@ -429,7 +429,7 @@ font-family:calibri;
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>30</y>
+       <y>50</y>
        <width>151</width>
        <height>71</height>
       </rect>
@@ -454,10 +454,10 @@ font-family:calibri;
     <widget class="QPushButton" name="Impdos_2">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>110</y>
-       <width>181</width>
-       <height>81</height>
+       <x>100</x>
+       <y>140</y>
+       <width>171</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -469,12 +469,12 @@ font-family:calibri;
   text-decoration: none;
 font-family:calibri;
   display: inline-block;
-  font-size: 11px;
+  font-size: 16px;
   margin: 4px 2px;
   border-radius : 16px;</string>
      </property>
      <property name="text">
-      <string>Impression</string>
+      <string>Imprimer</string>
      </property>
     </widget>
    </widget>
@@ -483,8 +483,8 @@ font-family:calibri;
      <rect>
       <x>690</x>
       <y>320</y>
-      <width>471</width>
-      <height>201</height>
+      <width>551</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="font">
@@ -530,7 +530,7 @@ font-family:calibri;
       <rect>
        <x>20</x>
        <y>70</y>
-       <width>241</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -552,7 +552,7 @@ font-family:calibri;
     <widget class="QLineEdit" name="LeIdRT">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>280</x>
        <y>30</y>
        <width>151</width>
        <height>31</height>
@@ -570,7 +570,7 @@ text-align:center;</string>
     <widget class="QLineEdit" name="LeTitreRT">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>280</x>
        <y>70</y>
        <width>151</width>
        <height>31</height>
@@ -588,10 +588,10 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>150</y>
        <width>151</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -614,10 +614,10 @@ font-family:calibri;
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>220</x>
        <y>150</y>
-       <width>141</width>
-       <height>41</height>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -637,13 +637,13 @@ font-family:calibri;
       <string>Trier par nom</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_11">
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>231</width>
-       <height>61</height>
+       <x>24</x>
+       <y>109</y>
+       <width>211</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -658,14 +658,14 @@ font-family:calibri;
 </string>
      </property>
      <property name="text">
-      <string>Rechercher par salaire</string>
+      <string>Rechercher par Salaire</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_3">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>110</y>
+       <x>280</x>
+       <y>111</y>
        <width>151</width>
        <height>31</height>
       </rect>
@@ -682,10 +682,10 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>390</x>
        <y>150</y>
-       <width>141</width>
-       <height>41</height>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -709,10 +709,10 @@ font-family:calibri;
    <widget class="QTextEdit" name="imp">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>196</y>
-      <width>821</width>
-      <height>121</height>
+      <x>370</x>
+      <y>180</y>
+      <width>871</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -729,7 +729,7 @@ text-align:center;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1221</width>
+     <width>1312</width>
      <height>26</height>
     </rect>
    </property>

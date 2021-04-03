@@ -122,6 +122,7 @@ void MainWindow::on_pushButtonAjouter_clicked()
       QMessageBox::information(nullptr, QObject::tr("Ajouter un employé "),
                                  QObject::tr("Employé non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
 
+
   }
 
 
@@ -224,7 +225,7 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
              ui->LeTitre->setText(qry.value(1).toString());
              ui->LeDescription->setText(qry.value(2).toString());
              ui->Lemail->setText(qry.value(3).toString());
-             ui->lineEdit_3->setText(qry.value(4).toString());
+             ui->lineEdit->setText(qry.value(4).toString());
              ui->lineEdit_2->setText(qry.value(5).toString());
              ui->comboBox->setCurrentText(qry.value(6).toString());
 
@@ -253,9 +254,9 @@ void MainWindow::on_Impdos_2_clicked()
 
 }
 
-void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+void MainWindow::on_lineEdit_3_textChanged(const QString &arg1)
 {
- ui->tableView->setModel(emp.rechercherS(arg1));
+    ui->tableView->setModel(emp.rechercherS(arg1));
 }
 
 void MainWindow::on_pushButton_3_clicked()

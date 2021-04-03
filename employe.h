@@ -41,7 +41,6 @@ public:
     QSqlQueryModel * rechercherCIN(QString);
     QSqlQueryModel * rechercherS(QString);
     QSqlQueryModel * rechercherNom(QString);
-
     QString  apercu_pdf();
 
 private:

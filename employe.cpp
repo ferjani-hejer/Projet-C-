@@ -162,6 +162,16 @@ QSqlQueryModel * Employe::AfficherTrieCIN()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM employes ORDER BY cinemp");
+
+    return model;
+}
+
+QSqlQueryModel * Employe::AfficherTrieNom()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM employes ORDER BY nom");
+
+
     return model;
 }
 
@@ -171,15 +181,6 @@ QSqlQueryModel * Employe::AfficherTrieS()
     model->setQuery("SELECT * FROM employes ORDER BY salaire");
     return model;
 }
-
-QSqlQueryModel * Employe::AfficherTrieNom()
-{
-    QSqlQueryModel * model = new QSqlQueryModel();
-    model->setQuery("SELECT * FROM employes ORDER BY nom");
-
-    return model;
-}
-
 
 QSqlQueryModel * Employe::rechercherCIN(QString cin)
 {
@@ -192,7 +193,6 @@ QSqlQueryModel * Employe::rechercherCIN(QString cin)
     return (model);
 }
 
-
 QSqlQueryModel * Employe::rechercherS(QString cin)
 {
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -203,7 +203,6 @@ QSqlQueryModel * Employe::rechercherS(QString cin)
     model->setQuery(q);
     return (model);
 }
-
 
 QSqlQueryModel * Employe::rechercherNom(QString nom)
 {
@@ -217,10 +216,9 @@ QSqlQueryModel * Employe::rechercherNom(QString nom)
 
 }
 
-
 QString Employe:: apercu_pdf()
  {
-     QString text="          ****** Les employes  ******      \n \n " ;
+    QString text="          ****** Les employes  ******      \n \n " ;
      QSqlQuery query ;
      QString i,x,z,a,b,c,d;
 
