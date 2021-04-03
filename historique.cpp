@@ -3,9 +3,9 @@
 Historique::Historique()
 {
     IDH=0;
-    Presence="";
-    tache="" ;
-    cause="";
+    Presence="XX";
+    tache="XX" ;
+    cause="XX";
 
 }
 
