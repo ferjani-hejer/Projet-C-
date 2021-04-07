@@ -6,18 +6,18 @@
 #include "connection.h"
 #include<QDebug>
 #include<QLineEdit>
-
 #include <QPrinter>
 #include <QPrintDialog>
 #include "dialogemploye.h"
 #include "dialoghistorique.h"
-
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    playermusic = new QMediaPlayer;
 
 }
 
@@ -36,3 +36,17 @@ void MainWindow::on_pushButtonHistorique_clicked()
     H.exec();
 }
 
+
+void MainWindow::on_start_2_clicked()
+{
+            playermusic->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/music.mp3"));
+            playermusic->play();
+            qDebug() << playermusic->errorString();
+}
+
+void MainWindow::on_pause_2_clicked()
+{
+
+    playermusic->pause();
+
+}

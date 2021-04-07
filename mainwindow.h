@@ -1,9 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
-
 #include"employe.h"
+#include <QMediaPlayer>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include<QSound>
+#include <QFileDialog>
+
 namespace Ui {
 class MainWindow;
 }
@@ -21,8 +25,13 @@ private slots:
  void on_pushButtonEmploye_clicked();
  void on_pushButtonHistorique_clicked();
 
+ void on_start_2_clicked();
+
+ void on_pause_2_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QMediaPlayer*	playermusic;
 
 };
 

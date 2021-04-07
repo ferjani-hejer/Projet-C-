@@ -264,3 +264,8 @@ void Dialogemploye::on_pushButton_3_clicked()
 {
  ui->tableView->setModel(emp.AfficherTrieS());
 }
+
+void Dialogemploye::on_pushButton_4_clicked()
+{
+    close();
+}

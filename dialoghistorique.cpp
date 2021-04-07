@@ -221,3 +221,8 @@ void Dialoghistorique::on_lineEdit_textChanged(const QString &arg1)
 {
     ui->tableView->setModel(h.rechercherID_E(arg1));
 }
+
+void Dialoghistorique::on_pushButton_4_clicked()
+{
+    close();
+}
