@@ -34,6 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QMediaPlayer*	playermusic;
+    QMediaPlayer*	player;
 
 };
 

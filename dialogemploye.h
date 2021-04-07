@@ -2,6 +2,10 @@
 #define DIALOGEMPLOYE_H
 #include "employe.h"
 #include <QDialog>
+#include <QMediaPlayer>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include<QSound>
 
 namespace Ui {
 class Dialogemploye;
@@ -57,6 +61,7 @@ private:
     Ui::Dialogemploye *ui;
     Employe emp;
     int id_emp=0;
+    QMediaPlayer*	player;
 };
 
 #endif // DIALOGEMPLOYE_H

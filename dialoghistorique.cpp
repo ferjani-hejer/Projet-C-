@@ -14,6 +14,7 @@ Dialoghistorique::Dialoghistorique(QWidget *parent) :
     ui->setupUi(this);
     ui->tableView->setModel(h.afficherHistorique());
     update_id();
+    player = new QMediaPlayer;
 }
 
 Dialoghistorique::~Dialoghistorique()
@@ -51,6 +52,10 @@ void Dialoghistorique::update_id()
 
 void Dialoghistorique::on_pushButtonAjouter_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     //Récuprération des informations saisies dans les 3 champs
 
     int id=ui->LeId->text().toInt();
@@ -101,6 +106,10 @@ void Dialoghistorique::on_pushButtonAjouter_clicked()
 
 void Dialoghistorique::on_pushButtonModifier_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     //Récuprération des informations saisies dans les 3 champs
 
     int ide=ui->IDE->currentText().toInt();
@@ -149,6 +158,9 @@ void Dialoghistorique::on_pushButtonModifier_clicked()
 
 void Dialoghistorique::on_pushButtonSupprimer_clicked()
 {
+        player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+        player->play();
+        qDebug() << player->errorString();
 
             bool test =h.supprimerHistorique(id_h);
             if(test)
@@ -169,11 +181,19 @@ void Dialoghistorique::on_pushButtonSupprimer_clicked()
 
 void Dialoghistorique::on_pushButton_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     ui->tableView->setModel(h.AfficherTrieID_H());
 }
 
 void Dialoghistorique::on_pushButton_2_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
      ui->tableView->setModel(h.AfficherTriePresence());
 }
 
@@ -224,5 +244,19 @@ void Dialoghistorique::on_lineEdit_textChanged(const QString &arg1)
 
 void Dialoghistorique::on_pushButton_4_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     close();
+}
+
+void Dialoghistorique::on_pushButton_3_clicked()
+{
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
+    ui->tableView->setModel(h.AfficherTrieID_E());
+
 }

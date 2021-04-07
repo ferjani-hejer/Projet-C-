@@ -17,6 +17,7 @@ Dialogemploye::Dialogemploye(QWidget *parent) :
     ui->setupUi(this);
      ui->tableView->setModel(emp.afficherEmployes());
       update_id();
+      player = new QMediaPlayer;
 }
 
 Dialogemploye::~Dialogemploye()
@@ -80,6 +81,10 @@ bool Dialogemploye::controleEmail(QString test)
 void Dialogemploye::on_pushButtonAjouter_clicked()
 {
 
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     //Récuprération des informations saisies dans les 3 champs
 
     int id=ui->LeId->text().toInt(); //convertir une chaine de caractére en un entier
@@ -130,6 +135,11 @@ void Dialogemploye::on_pushButtonAjouter_clicked()
 
 void Dialogemploye::on_pushButtonModifier_clicked()
 {
+
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     //Récuprération des informations saisies dans les 3 champs
 
     QString nom=ui->LeTitre->text();
@@ -177,6 +187,10 @@ void Dialogemploye::on_pushButtonModifier_clicked()
 
 void Dialogemploye::on_pushButtonSupprimer_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
             bool test = emp.supprimerEmployes(id_emp);
             if(test)
             {
@@ -196,11 +210,18 @@ void Dialogemploye::on_pushButtonSupprimer_clicked()
 
 void Dialogemploye::on_pushButton_clicked()
 {
-     ui->tableView->setModel(emp.AfficherTrieCIN());
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
+    ui->tableView->setModel(emp.AfficherTrieCIN());
 }
 
 void Dialogemploye::on_pushButton_2_clicked()
 {
+     player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+     player->play();
+     qDebug() << player->errorString();
      ui->tableView->setModel(emp.AfficherTrieNom());
 }
 
@@ -242,6 +263,10 @@ void Dialogemploye::on_tableView_clicked(const QModelIndex &index)
 
 void Dialogemploye::on_Impdos_2_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
+
     Employe c;
 
              QString text=c.apercu_pdf();
@@ -262,10 +287,16 @@ void Dialogemploye::on_lineEdit_3_textChanged(const QString &arg1)
 
 void Dialogemploye::on_pushButton_3_clicked()
 {
+ player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+ player->play();
+ qDebug() << player->errorString();
  ui->tableView->setModel(emp.AfficherTrieS());
 }
 
 void Dialogemploye::on_pushButton_4_clicked()
-{
+{    
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->play();
+    qDebug() << player->errorString();
     close();
 }

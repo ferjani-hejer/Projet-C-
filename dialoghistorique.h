@@ -1,8 +1,11 @@
 #ifndef DIALOGHISTORIQUE_H
 #define DIALOGHISTORIQUE_H
-
 #include <QDialog>
 #include "historique.h"
+#include <QMediaPlayer>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include<QSound>
 
 namespace Ui {
 class Dialoghistorique;
@@ -45,10 +48,13 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Dialoghistorique *ui;
     Historique h;
     int id_h=0;
+    QMediaPlayer*	player;
 };
 
 #endif // DIALOGHISTORIQUE_H
