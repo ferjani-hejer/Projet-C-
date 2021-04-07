@@ -17,9 +17,9 @@
    <widget class="QPushButton" name="pushButtonEmploye">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>670</x>
       <y>270</y>
-      <width>331</width>
+      <width>341</width>
       <height>91</height>
      </rect>
     </property>
@@ -153,9 +153,9 @@ font-family:calibri;
    <widget class="QPushButton" name="pushButtonHistorique">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>670</x>
       <y>390</y>
-      <width>331</width>
+      <width>341</width>
       <height>91</height>
      </rect>
     </property>

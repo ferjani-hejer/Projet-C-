@@ -50,3 +50,8 @@ void MainWindow::on_pause_2_clicked()
     playermusic->pause();
 
 }
+
+void MainWindow::on_horizontalSlider_2_sliderMoved(int position)
+{
+    playermusic->setVolume(position);
+}

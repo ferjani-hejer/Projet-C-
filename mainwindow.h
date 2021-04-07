@@ -29,6 +29,8 @@ private slots:
 
  void on_pause_2_clicked();
 
+ void on_horizontalSlider_2_sliderMoved(int position);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer*	playermusic;
