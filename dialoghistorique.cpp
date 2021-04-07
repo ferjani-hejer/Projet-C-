@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include "connection.h"
 #include<QDebug>
-
+#include <QPixmap>
 
 Dialoghistorique::Dialoghistorique(QWidget *parent) :
     QDialog(parent),
@@ -15,6 +15,13 @@ Dialoghistorique::Dialoghistorique(QWidget *parent) :
     ui->tableView->setModel(h.afficherHistorique());
     update_id();
     player = new QMediaPlayer;
+
+    QPixmap bkgnd("C:/Users/ASUS/Desktop/Source/imgg.png");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+    ui->label_4->setPixmap(bkgnd);
 }
 
 Dialoghistorique::~Dialoghistorique()

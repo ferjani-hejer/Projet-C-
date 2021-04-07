@@ -6,7 +6,7 @@
 #include "connection.h"
 #include<QDebug>
 #include<QLineEdit>
-
+#include <QPixmap>
 #include <QPrinter>
 #include <QPrintDialog>
 
@@ -14,10 +14,18 @@ Dialogemploye::Dialogemploye(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogemploye)
 {
-    ui->setupUi(this);
+     ui->setupUi(this);
      ui->tableView->setModel(emp.afficherEmployes());
-      update_id();
-      player = new QMediaPlayer;
+     update_id();
+     player = new QMediaPlayer;
+
+     QPixmap bkgnd("C:/Users/ASUS/Desktop/Source/imgg.png");
+     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+     QPalette palette;
+     palette.setBrush(QPalette::Background, bkgnd);
+     this->setPalette(palette);
+     ui->label_11->setPixmap(bkgnd);
+
 }
 
 Dialogemploye::~Dialogemploye()

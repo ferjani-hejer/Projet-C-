@@ -49,14 +49,14 @@ text-align:center;</string>
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>10</x>
        <y>0</y>
        <width>93</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 0);
+      <string notr="true">background-color: #8B0000	;
   border: none;
   color: white;
   padding: 20px;
@@ -721,6 +721,25 @@ font-family:calibri;
       </property>
      </widget>
     </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>-36</x>
+       <y>-55</y>
+       <width>1331</width>
+       <height>581</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <zorder>label_11</zorder>
+    <zorder>tableView</zorder>
+    <zorder>pushButton_4</zorder>
+    <zorder>groupBox</zorder>
+    <zorder>groupBox_2</zorder>
+    <zorder>groupBox_3</zorder>
    </widget>
    <widget class="QWidget" name="Tab2">
     <attribute name="title">
